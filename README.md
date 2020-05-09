@@ -14,9 +14,6 @@ Lors de la création d'un projet, vous serez amenés à devoir créer des blocks
 
 **Il faut absolument que Woodkit soit présent au même niveau que Woodgut (Woodgut dépend de Woodkit via des liens symboliques)**
 
-Avant de commencer, nous allons devoir configurer notre contexte de développement, pas de panique, Wookdit gère beaucoup de choses.
-* lancer un $ npm install (le fichier package.json est défini par Woodkit - c'est un lien symbolique)
-
 **Pour ajouter un block :**
 
 *Définition : un block Gutenberg est un élément qui peut s'ajouter dans le contenu*
