@@ -95,7 +95,7 @@ if(!class_exists('Woodgut')){
 		 * Plugins loaded
 		 */
 		public function plugins_loaded () {
-			require_once(WOODGUT_PLUGIN_PATH.'src/blocks/yop/index.php');
+			// require_once(WOODGUT_PLUGIN_PATH.'src/blocks/_blank_/index.php');
 		}
 
 		/**
