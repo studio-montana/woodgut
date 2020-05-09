@@ -1,9 +1,9 @@
 <?php
 /**
- * @package Woodgut
+ * @package Woodkit
 * @author Sébastien Chandonay www.seb-c.com / Cyril Tissot www.cyriltissot.com
 * License: GPL2
-* Text Domain: woodgut
+* Text Domain: woodkit
 *
 * Copyright 2016 Sébastien Chandonay (email : please contact me from my website)
 *
@@ -23,11 +23,11 @@
 
 defined('ABSPATH') or die("Go Away!");
 
-class WKG_Module_Store_commons extends WKG_Module_Store {
+class WKG_Module_Store__blank_ extends WKG_Module_Store {
 
 	function __construct () {
-		parent::__construct('commons');
+		parent::__construct('_blank_');
 	}
 
 }
-new WKG_Module_Store_commons();
+new WKG_Module_Store__blank_();

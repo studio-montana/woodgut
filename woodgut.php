@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woodgut
  * Plugin URI: http://www.studio-montana.com/product/woodgut
- * Description: Multitool experience for WP | SEO, security, private area, tracking, legal, ...
+ * Description: Gutenberg specific blocks/plugins/stores...
  * Version: 2.0.0
  * Author: Studio Montana
  * Author URI: http://www.studio-montana.com/
@@ -58,35 +58,44 @@ if(!class_exists('Woodgut')){
 
 			/** plugin textdomain */
 			load_plugin_textdomain('woodgut', false, dirname( plugin_basename( __FILE__ ) ).'/lang/' );
-
-			require_once (WOODGUT_PLUGIN_PATH.'src/helpers/index.php');
-			require_once (WOODGUT_PLUGIN_PATH.'src/rest/commons.php');
-
+			
 			/** plugin install/uninstall hooks */
 			register_activation_hook(__FILE__, array($this, 'activate'));
 			register_deactivation_hook(__FILE__, array($this, 'deactivate'));
-
+			
+			/** Plugin loaded (launched before init hook) */
+			add_action('plugins_loaded', array($this, 'plugins_loaded'));
+			
 			/** Woodgut init */
 			add_action('init', array($this, 'init'), 5);
+			
+			/** Admin notices */
+			add_action('admin_notices', array($this, 'admin_notices'));
+			
 		}
 
 		/**
 		 * Activate the plugin
 		 */
 		public function activate(){
-			$this->tools->plugin_activation();
 		}
 
 		/**
 		 * Deactivate the plugin
 		 */
 		public function deactivate(){
-			$this->tools->plugin_deactivation();
 		}
 
 		public static function get_info($name){
 			$plugin_data = get_plugin_data(__FILE__);
 			return $plugin_data[$name];
+		}
+		
+		/**
+		 * Plugins loaded
+		 */
+		public function plugins_loaded () {
+			require_once(WOODGUT_PLUGIN_PATH.'src/blocks/yop/index.php');
 		}
 
 		/**
@@ -95,6 +104,14 @@ if(!class_exists('Woodgut')){
 		public function init() {
 			do_action("woodgut_before_init");
 			do_action("woodgut_after_init");
+		}
+		
+		function admin_notices() {/** woodkit dependencies */
+			if(!class_exists('Woodkit')){
+				$class = 'notice notice-error';
+				$message = __('Woodgut error : Woodkit plugin must be installed and activated', 'woodgut');
+				printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+			}
 		}
 
 	}
