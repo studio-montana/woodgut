@@ -2,7 +2,9 @@
 
 **Carcasse de plugin Wordpress pour gérer les élements Gutenberg spécifiques à un projet.**
 
-Lors de la création d'un projet, vous serez amenés à devoir créer des blocks/plugins/stores spécifiques. Afin de ne pas intégrer ça dans le thème du projet (qui serait une erreur structurelle), ce plugin propose la carcasse de base pour faire ces développements.
+Lors de la création d'un projet, vous serez amenés à devoir créer des blocks/plugins/stores Gutenberg spécifiques. Afin de ne pas intégrer ça dans le thème du projet (ce serait une erreur structurelle), ce plugin propose la carcasse de base pour faire ces développements.
+
+**NOTE** : Ce plugin ne reçoit pas de mises à jour une fois installé sur le Wordpress final, il est spécifique à chaque projet.
 
 **Ce plugin nécessite l'installation et l'activation de Woodkit > v2.x.x**
 
