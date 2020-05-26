@@ -2,18 +2,17 @@
 
 **Carcasse de plugin Wordpress pour gérer les élements Gutenberg spécifiques à un projet.**
 
-Lors de la création d'un projet, vous serez amenés à devoir créer des blocks/plugins/stores spécifiques. Afin de ne pas intégrer ça dans le thème du projet (qui serait une erreur structurelle), ce plugin propose la carcasse de base pour faire ces développements.
+Lors de la création d'un projet, vous serez amenés à devoir créer des blocks/plugins/stores Gutenberg spécifiques. Afin de ne pas intégrer ça dans le thème du projet (ce serait une erreur structurelle), ce plugin propose la carcasse de base pour faire ces développements.
 
-Ce plugin nécessite l'installation et l'activation de Woodkit > v2.x.x
+**NOTE** : Ce plugin ne reçoit pas de mises à jour une fois installé sur le Wordpress final, il est spécifique à chaque projet.
+
+**Ce plugin nécessite l'installation et l'activation de Woodkit > v2.x.x**
 
 ## Context Gutenberg
 
 **Préparation :**
 
-**Il faut absolument que Woodkit soit présent au même niveau que Woodgut (Woodgut dépend de Woodkit via des lien symboliques)**
-
-Avant de commencer, nous allons devoir configurer notre contexte de développement, pas de panique, Wookdit gère beaucoup de choses.
-* lancer un $ npm install (le fichier package.json est défini par Woodkit - c'est un lien symbolique)
+**Il faut absolument que Woodkit soit présent au même niveau que Woodgut (Woodgut dépend de Woodkit via des liens symboliques)**
 
 **Pour ajouter un block :**
 
@@ -61,7 +60,7 @@ Avant de commencer, nous allons devoir configurer notre contexte de développeme
 * les assets React proposés par Woodkit sont accessible via *import ASSET_NAME  from 'wkgassets/...'*
   * exemple : import WKG_Icons from 'wkgassets/icons'
 
-  ## Internationalisation
+## Internationalisation
 
 **Mise à jour des fichiers de traductions**
 
