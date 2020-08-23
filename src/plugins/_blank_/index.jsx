@@ -4,7 +4,7 @@ const { Component, Fragment } = wp.element
 const { withSelect, withDispatch } = wp.data
 const { compose } = wp.compose
 const { PluginDocumentSettingPanel } = wp.editPost
-const { PanelBody, PanelRow } = wp.components
+const { TextControl } = wp.components
 
 registerPlugin('wkg-plugin-_blank_', {
   icon: 'admin-customizer',
@@ -24,11 +24,13 @@ class PluginComponent_Base extends Component {
 	render () {
 		return (
 				<Fragment>
-				<PanelBody className="wkg-plugin-panelbody">
-          <PanelRow className="wkg-plugin-panelrow">
-          <TextControl label={__('Custom meta', 'woodgut')} value={this.props._custom_meta_name} onChange={(value) => this.props.on_meta_change({'_custom_meta_name': value})} />
-          </PanelRow>
-          </PanelBody>
+				<div className="wkg-content">
+          <div className="wkg-panel-row">
+            <div className="wkg-description">
+            	<TextControl label={__('Custom meta', 'woodgut')} value={this.props._custom_meta_name} onChange={(value) => this.props.on_meta_change({'_custom_meta_name': value})} />
+            </div>
+          </div>
+				</div>
 			</Fragment>
 		)
 	}
