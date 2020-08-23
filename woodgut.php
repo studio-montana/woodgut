@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woodgut
  * Plugin URI: http://www.studio-montana.com/product/woodgut
- * Description: Gutenberg specific blocks/plugins/stores...
+ * Description: Ajoute des modules Gutenberg (blocks/plugins/stores...) spécifiques à votre site Web
  * Version: 2.0.0
  * Author: Studio Montana
  * Author URI: http://www.studio-montana.com/
