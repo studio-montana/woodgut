@@ -14,12 +14,18 @@ Lors de la création d'un projet, vous serez amenés à devoir créer des blocks
 
 **Il faut absolument que Woodkit soit présent au même niveau que Woodgut (Woodgut dépend de Woodkit via des liens symboliques)**
 
+**Pour un nouveau projet, il faut en général suivre les étapes suivantes pour la préparation :**
+
+* vérifier si le dossier node_modules/ est présent dans ../woodkit/
+* sinon, se déplacer dans *$ cd ../woodkit/* puis lancer *$ npm install* afin d'installer les dépendances du projet
+* ensuite revenir dans woodgut *$ cd ../woodgut* pour la suite
+
 **Pour ajouter un block :**
 
 *Définition : un block Gutenberg est un élément qui peut s'ajouter dans le contenu*
 
-* Dupliquer le dossier *src/blocks/_blank_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
-* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "_blank_" par 'votre_slug'
+* Dupliquer le dossier *src/blocks/\_blank\_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
+* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "\_blank\_" par 'votre_slug'
 * Ouvrir webpack.config.js qui est à la racine du projet et ajouter la référence à votre nouveau block comme ceci :
   * {'entry': 'index.jsx', 'name': 'votre_slug', 'path': 'PATH_TO_YOUR_BLOCK_DIR', 'entry': 'index.jsx'},
 * Lancez *$ npm run dev* (si webpack est déjà en route, vous devez le redémarrer)
@@ -31,8 +37,8 @@ Lors de la création d'un projet, vous serez amenés à devoir créer des blocks
 
 *Définition : un plugin Gutenberg est un élément qui s'ajoute à l'interface (sidebar / header / ...)*
 
-* Dupliquer le dossier *src/plugins/_blank_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
-* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "_blank_" par 'votre_slug'
+* Dupliquer le dossier *src/plugins/\_blank\_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
+* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "\_blank\_" par 'votre_slug'
 * Ouvrir webpack.config.js qui est à la racine du projet et ajouter la référence à votre nouveau block comme ceci :
   * {'entry': 'index.jsx', 'name': 'votre_slug', 'path': 'PATH_TO_YOUR_PLUGIN_DIR', 'entry': 'index.jsx'},
 * Lancez *$ npm run dev* (si webpack est déjà en route, vous devez le redémarrer)
@@ -44,8 +50,8 @@ Lors de la création d'un projet, vous serez amenés à devoir créer des blocks
 
 *Définition : un store permet de gérer les états des blocks/plugins de façon globale*
 
-* Dupliquer le dossier *src/stores/_blank_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
-* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "_blank_" par 'votre_slug'
+* Dupliquer le dossier *src/stores/\_blank\_* au même niveau et le renommer avec 'votre_slug' (Important : nommage en snake_case)
+* Dans ce nouveau dossier, faire un rechercher/remplacer global dans ce nouveau dossier sur "\_blank\_" par 'votre_slug'
 * Ouvrir webpack.config.js qui est à la racine du projet et ajouter la référence à votre nouveau block comme ceci :
   * {'entry': 'index.jsx', 'name': 'votre_slug', 'path': 'PATH_TO_YOUR_STORE_DIR', 'entry': 'index.jsx'},
 * Lancez *$ npm run dev* (si webpack est déjà en route, vous devez le redémarrer)
